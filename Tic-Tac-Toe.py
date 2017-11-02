@@ -11,8 +11,8 @@ blackOutline = LineStyle(10,black)
 def mouseClick(event):
     if event.x < 200 and event.x > 50:
         if event.y < 200 and event.y > 50:
-            Sprite(x1,(50,50))
-            Sprite(x2,(50,100))
+            Sprite(x1,(80,175))
+            Sprite(x2,(80,75))
 
 
 if __name__ == '__main__':
@@ -21,8 +21,8 @@ if __name__ == '__main__':
     boardV1 = LineAsset(0,450,blackOutline)
     boardH1 = LineAsset(450,0,blackOutline)
     
-    x1 = LineAsset(40,-40,blackOutline)
-    x2 = LineAsset(40,40,blackOutline)
+    x1 = LineAsset(100,-100,LineStyle(8,black))
+    x2 = LineAsset(100,100,LineStyle(8,black))
     
     #Desplays the board
     Sprite(boardV1,(200,50))
