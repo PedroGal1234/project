@@ -3,6 +3,7 @@
 #tic-tac-toe against computer
 
 from ggame import *
+from math import randint
 
 #Does Something when someone clicks On an open Sace
 def mouseClick(event):
@@ -39,25 +40,27 @@ def mouseClick(event):
         elif event.y < 650 and event.y > 350:
             Sprite(x1,(370,465))
             Sprite(x2,(370,365))
-
+    
+    place = randint(1,9)
+        if place == 1:
+            sprite(o,(100,100)
+        if place == 2:
+        
+            if place == 2:
     
     
-    if event.x < 500 and event.x > 350:
-        if event.y < 350 and event.y > 200:
-            Sprite(x1,(370,320))
-            Sprite(x2,(370,220))
 
 
 if __name__ == '__main__':
     black = Color(0x00000,1)
+    white = Color(0xffffff,1)
     blackOutline = LineStyle(10,black)
     boardV1 = LineAsset(0,450,blackOutline)
     boardH1 = LineAsset(450,0,blackOutline)
     
     x1 = LineAsset(100,-100,LineStyle(8,black))
     x2 = LineAsset(100,100,LineStyle(8,black))
-    o1 = 
-    o2 = 
+    o = CircleAsset(50,LineStyle(8,black),white)
     
     #Desplays the board
     Sprite(boardV1,(200,50))
