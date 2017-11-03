@@ -87,23 +87,42 @@ def ComputerTurn():
         ComputerTurn()
 
 def end():
-    if data['s1'] == data['s2'] and data['s1'] == data['s3']:
-        print('End')
-    elif data['s4'] == data['s5'] and data['s4'] == data['s6']:
-        print('End')
-    elif data['s7'] == data['s8'] and data['s7'] == data['s9']:
-        print('End')
-    elif data['s1'] == data['s4'] and data['s1'] == data['s7']:
-        print('End')
-    elif data['s2'] == data['s5'] and data['s2'] == data['s8']:
-        print('End')
-    elif data['s3'] == data['s6'] and data['s3'] == data['s9']:
-        print('End')
-    elif data['s1'] == data['s5'] and data['s1'] == data['s9']:
-        print('End')
-    elif data['s3'] == data['s5'] and data['s3'] == data['s7']:
-        print('End')
-    else:    
+    #Checks to see if X won
+    if data['s1'] == 1 and data['s2'] == 1 and data['s3'] == 1:
+        print('X wins')
+    elif data['s4'] == 1 and data['s5'] == 1 and data['s6'] == 1:
+        print('X wins')
+    elif data['s7'] == 1 and data['s8'] == 1 and data['s9'] == 1:
+        print('X wins')
+    elif data['s1'] == 1 and data['s4'] == 1 and data['s7'] == 1:
+        print('X wins')
+    elif data['s2'] == 1 and data['s6'] == 1 and data['s8'] == 1:
+        print('X wins')
+    elif data['s3'] == 1 and data['s6'] == 1 and data['s9'] == 1:
+        print('X wins')
+    elif data['s1'] == 1 and data['s5'] == 1 and data['s9'] == 1:
+        print('X wins')
+    elif data['s7'] == 1 and data['s5'] == 1 and data['s3'] == 1:
+        print('X wins')
+    #Checks to see if O won
+    if data['s1'] == 2 and data['s2'] == 2 and data['s3'] == 2:
+        print('O wins')
+    elif data['s4'] == 2 and data['s5'] == 2 and data['s6'] == 2:
+        print('O wins')
+    elif data['s7'] == 2 and data['s8'] == 2 and data['s9'] == 2:
+        print('O wins')
+    elif data['s1'] == 2 and data['s4'] == 2 and data['s7'] == 2:
+        print('O wins')
+    elif data['s2'] == 2 and data['s6'] == 2 and data['s8'] == 2:
+        print('O wins')
+    elif data['s3'] == 2 and data['s6'] == 2 and data['s9'] == 2:
+        print('O wins')
+    elif data['s1'] == 2 and data['s5'] == 2 and data['s9'] == 2:
+        print('O wins')
+    elif data['s7'] == 2 and data['s5'] == 2 and data['s3'] == 2:
+        print('O wins')
+    
+    elif data['s1']>0 and data['s2']>0 and data['s3']>0 and data['s4']>0 and data['s5']>0 and data['s6']>0 and data['s7']>0 and data['s8']>0 and data['s9']>0:  
         print('Tie game')
 
 if __name__ == '__main__':
