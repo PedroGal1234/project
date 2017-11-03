@@ -12,43 +12,45 @@ def mouseClick(event):
         if event.y < 200 and event.y > 50:
             Sprite(data['x1'],(80,175))
             Sprite(data['x2'],(80,75))
-            data['s1'] += 1
+            data['s1'] = 1
         elif event.y < 350 and event.y > 200:
             Sprite(data['x1'],(80,320))
             Sprite(data['x2'],(80,220))
-            data['s2'] += 1
+            data['s2'] = 1
         elif event.y < 650 and event.y > 350:
             Sprite(data['x1'],(80,465))
             Sprite(data['x2'],(80,365))
-            data['s3'] += 1
+            data['s3'] = 1
+            
 #Prints out things when clicks in second column  
     elif event.x < 350 and event.x > 50:
         if event.y < 200 and event.y > 50:
             Sprite(data['x1'],(225,175))
             Sprite(data['x2'],(225,75))
-            data['s4'] += 1
+            data['s4'] = 1
         elif event.y < 350 and event.y > 200:
             Sprite(data['x1'],(225,320))
             Sprite(data['x2'],(225,220))
-            data['s5'] += 1
+            data['s5'] = 1
         elif event.y < 650 and event.y > 350:
             Sprite(data['x1'],(225,465))
             Sprite(data['x2'],(225,365))
-            data['s6'] += 1    
+            data['s6'] = 1    
+            
 #Prints out things when clicks in third column
     elif event.x < 500 and event.x > 350:
         if event.y < 200 and event.y > 50:
             Sprite(data['x1'],(370,175))
             Sprite(data['x2'],(370,75))
-            data['s7'] += 1
+            data['s7'] = 1
         elif event.y < 350 and event.y > 200:
             Sprite(data['x1'],(370,320))
             Sprite(data['x2'],(370,220))
-            data['s8'] += 1
+            data['s8'] = 1
         elif event.y < 650 and event.y > 350:
             Sprite(data['x1'],(370,465))
             Sprite(data['x2'],(370,365))
-            data['s9'] += 1
+            data['s9'] = 1
     ComputerTurn()
     end()
 
@@ -56,36 +58,52 @@ def ComputerTurn():
     place = randint(1,9)
     if place == 1 and data['s1'] == 0:
         Sprite(data['o'],(110,110))
-        data['s1'] += 1
+        data['s1'] = 2
     elif place == 2 and data['s2'] == 0:
         Sprite(data['o'],(275,110))
-        data['s2'] += 1
+        data['s2'] = 2
     elif place == 3 and data['s3'] == 0:
         Sprite(data['o'],(425,110))
-        data['s3'] += 1
+        data['s3'] = 2
     elif place == 4 and data['s4'] == 0:
         Sprite(data['o'],(110,275))
-        data['s4'] += 1
+        data['s4'] = 2
     elif place == 5 and data['s5'] == 0:
         Sprite(data['o'],(275,275))
-        data['s5'] += 1
+        data['s5'] = 2
     elif place == 6 and data['s6'] == 0:
         Sprite(data['o'],(425,275))
-        data['s6'] += 1
+        data['s6'] = 2
     elif place == 7 and data['s7'] == 0:
         Sprite(data['o'],(110,450))
-        data['s7'] += 1
+        data['s7'] = 2
     elif place == 8 and data['s8'] == 0:
         Sprite(data['o'],(275,425))
-        data['s8'] += 1
+        data['s8'] = 2
     elif place == 9 and data['s9'] == 0:
         Sprite(data['o'],(425,425))
-        data['s9'] += 1
+        data['s9'] = 2
     else:
         ComputerTurn()
 
 def end():
-    if data['s1']>0 and data['s2']>0 and data['s3']>0 and data['s4']>0 and data['s5']>0 and data['s6']>0 and data['s7']>0 and data['s8']>0 and data['s9']>0:
+    if data['s1'] == data['s2'] and data['s1'] == data['s3']:
+        print('End')
+    elif data['s4'] == data['s5'] and data['s4'] == data['s6']:
+        print('End')
+    elif data['s7'] == data['s8'] and data['s7'] == data['s9']:
+        print('End')
+    elif data['s1'] == data['s4'] and data['s1'] == data['s7']:
+        print('End')
+    elif data['s2'] == data['s5'] and data['s2'] == data['s8']:
+        print('End')
+    elif data['s3'] == data['s6'] and data['s3'] == data['s9']:
+        print('End')
+    elif data['s1'] == data['s5'] and data['s1'] == data['s9']:
+        print('End')
+    elif data['s3'] == data['s5'] and data['s3'] == data['s7']:
+        print('End')
+    else:    
         print('Tie game')
 
 if __name__ == '__main__':
