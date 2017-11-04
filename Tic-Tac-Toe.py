@@ -12,7 +12,7 @@ def isEmpty(x):
     else:
         return False
 
-Checks to see if someone won
+#Checks to see if someone won
 def winner():
     #Checks to see if X won
     if data['s1'] == 1 and data['s2'] == 1 and data['s3'] == 1:
@@ -148,6 +148,7 @@ if __name__ == '__main__':
     blackOutline = LineStyle(10,black)
     boardV1 = LineAsset(0,450,blackOutline)
     boardH1 = LineAsset(450,0,blackOutline)
+    
     data = {}
     
     data['x1'] = LineAsset(100,-100,LineStyle(8,black))
@@ -162,6 +163,7 @@ if __name__ == '__main__':
     data['s7'] = 0
     data['s8'] = 0
     data['s9'] = 0
+    
     #Desplays the board
     Sprite(boardV1,(200,50))
     Sprite(boardV1,(350,50))
