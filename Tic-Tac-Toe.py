@@ -5,6 +5,61 @@
 from ggame import *
 from random import randint
 
+#Checks to see if a space is empty
+def isEmpty(x):
+    if x == 0:
+        return True
+    else:
+        return False
+
+Checks to see if someone won
+def winner():
+    #Checks to see if X won
+    if data['s1'] == 1 and data['s2'] == 1 and data['s3'] == 1:
+        print('X wins')
+    elif data['s4'] == 1 and data['s5'] == 1 and data['s6'] == 1:
+        print('X wins')
+    elif data['s7'] == 1 and data['s8'] == 1 and data['s9'] == 1:
+        print('X wins')
+    elif data['s1'] == 1 and data['s4'] == 1 and data['s7'] == 1:
+        print('X wins')
+    elif data['s2'] == 1 and data['s6'] == 1 and data['s8'] == 1:
+        print('X wins')
+    elif data['s3'] == 1 and data['s6'] == 1 and data['s9'] == 1:
+        print('X wins')
+    elif data['s1'] == 1 and data['s5'] == 1 and data['s9'] == 1:
+        print('X wins')
+    elif data['s7'] == 1 and data['s5'] == 1 and data['s3'] == 1:
+        print('X wins')
+    #Checks to see if O won
+    elif data['s1'] == 2 and data['s2'] == 2 and data['s3'] == 2:
+        print('O wins')
+    elif data['s4'] == 2 and data['s5'] == 2 and data['s6'] == 2:
+        print('O wins')
+    elif data['s7'] == 2 and data['s8'] == 2 and data['s9'] == 2:
+        print('O wins')
+    elif data['s1'] == 2 and data['s4'] == 2 and data['s7'] == 2:
+        print('O wins')
+    elif data['s2'] == 2 and data['s6'] == 2 and data['s8'] == 2:
+        print('O wins')
+    elif data['s3'] == 2 and data['s6'] == 2 and data['s9'] == 2:
+        print('O wins')
+    elif data['s1'] == 2 and data['s5'] == 2 and data['s9'] == 2:
+        print('O wins')
+    elif data['s7'] == 2 and data['s5'] == 2 and data['s3'] == 2:
+        print('O wins')
+    
+    #Checks to see if a tie
+    elif fullboard() == True:
+        print('Tie Game')
+
+#Checks to see if board is full for a tie
+def fullboard():
+    if data['s1']>0 and data['s2']>0 and data['s3']>0 and data['s4']>0 and data['s5']>0 and data['s6']>0 and data['s7']>0 and data['s8']>0 and data['s9']>0:  
+        return True
+    else:
+        return False
+
 #Does Something when someone clicks On an open Sace
 def mouseClick(event):
 #Prints out things when clicks in first column
@@ -52,78 +107,40 @@ def mouseClick(event):
             Sprite(data['x2'],(370,365))
             data['s9'] = 1
     ComputerTurn()
-    end()
+    winner()
 
+#Does the computer turn
 def ComputerTurn():
     place = randint(1,9)
-    if place == 1 and data['s1'] == 0:
+    if place == 1 and isEmpty(data['s1']) == True:
         Sprite(data['o'],(110,110))
         data['s1'] = 2
-    elif place == 2 and data['s2'] == 0:
+    elif place == 2 and isEmpty(data['s2']) == True:
         Sprite(data['o'],(275,110))
         data['s2'] = 2
-    elif place == 3 and data['s3'] == 0:
+    elif place == 3 and isEmpty(data['s3']) == True:
         Sprite(data['o'],(425,110))
         data['s3'] = 2
-    elif place == 4 and data['s4'] == 0:
+    elif place == 4 and isEmpty(data['s4']) == True:
         Sprite(data['o'],(110,275))
         data['s4'] = 2
-    elif place == 5 and data['s5'] == 0:
+    elif place == 5 and isEmpty(data['s5']) == True:
         Sprite(data['o'],(275,275))
         data['s5'] = 2
-    elif place == 6 and data['s6'] == 0:
+    elif place == 6 and isEmpty(data['s6']) == True:
         Sprite(data['o'],(425,275))
         data['s6'] = 2
-    elif place == 7 and data['s7'] == 0:
+    elif place == 7 and isEmpty(data['s7']) == True:
         Sprite(data['o'],(110,450))
         data['s7'] = 2
-    elif place == 8 and data['s8'] == 0:
+    elif place == 8 and isEmpty(data['s8']) == True:
         Sprite(data['o'],(275,425))
         data['s8'] = 2
-    elif place == 9 and data['s9'] == 0:
+    elif place == 9 and isEmpty(data['s9']) == True:
         Sprite(data['o'],(425,425))
         data['s9'] = 2
     else:
         ComputerTurn()
-
-def end():
-    #Checks to see if X won
-    if data['s1'] == 1 and data['s2'] == 1 and data['s3'] == 1:
-        print('X wins')
-    elif data['s4'] == 1 and data['s5'] == 1 and data['s6'] == 1:
-        print('X wins')
-    elif data['s7'] == 1 and data['s8'] == 1 and data['s9'] == 1:
-        print('X wins')
-    elif data['s1'] == 1 and data['s4'] == 1 and data['s7'] == 1:
-        print('X wins')
-    elif data['s2'] == 1 and data['s6'] == 1 and data['s8'] == 1:
-        print('X wins')
-    elif data['s3'] == 1 and data['s6'] == 1 and data['s9'] == 1:
-        print('X wins')
-    elif data['s1'] == 1 and data['s5'] == 1 and data['s9'] == 1:
-        print('X wins')
-    elif data['s7'] == 1 and data['s5'] == 1 and data['s3'] == 1:
-        print('X wins')
-    #Checks to see if O won
-    if data['s1'] == 2 and data['s2'] == 2 and data['s3'] == 2:
-        print('O wins')
-    elif data['s4'] == 2 and data['s5'] == 2 and data['s6'] == 2:
-        print('O wins')
-    elif data['s7'] == 2 and data['s8'] == 2 and data['s9'] == 2:
-        print('O wins')
-    elif data['s1'] == 2 and data['s4'] == 2 and data['s7'] == 2:
-        print('O wins')
-    elif data['s2'] == 2 and data['s6'] == 2 and data['s8'] == 2:
-        print('O wins')
-    elif data['s3'] == 2 and data['s6'] == 2 and data['s9'] == 2:
-        print('O wins')
-    elif data['s1'] == 2 and data['s5'] == 2 and data['s9'] == 2:
-        print('O wins')
-    elif data['s7'] == 2 and data['s5'] == 2 and data['s3'] == 2:
-        print('O wins')
-    
-    elif data['s1']>0 and data['s2']>0 and data['s3']>0 and data['s4']>0 and data['s5']>0 and data['s6']>0 and data['s7']>0 and data['s8']>0 and data['s9']>0:  
-        print('Tie game')
 
 if __name__ == '__main__':
     black = Color(0x00000,1)
