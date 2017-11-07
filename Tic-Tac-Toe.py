@@ -8,9 +8,11 @@ from random import randint
 #Checks to see if a space is empty
 def isEmpty(s):
     if data['s'+str(s)] > 0:
-        print(False)
+        print('False',str(s))
         return False
-    return True
+    else:
+        print('True',str(s))
+        return True
 
 #Checks to see if someone won
 def winner():
@@ -70,17 +72,17 @@ def mouseClick(event):
         elif event.y < 350 and event.y > 200:
             Sprite(data['x1'],(80,320))
             Sprite(data['x2'],(80,220))
-            data['s2'] = 1
+            data['s4'] = 1
         elif event.y < 650 and event.y > 350:
             Sprite(data['x1'],(80,465))
             Sprite(data['x2'],(80,365))
-            data['s3'] = 1
+            data['s7'] = 1
 #Prints out things when clicks in second column  
     elif event.x < 350 and event.x > 50:
         if event.y < 200 and event.y > 50:
             Sprite(data['x1'],(225,175))
             Sprite(data['x2'],(225,75))
-            data['s4'] = 1
+            data['s2'] = 1
         elif event.y < 350 and event.y > 200:
             Sprite(data['x1'],(225,320))
             Sprite(data['x2'],(225,220))
@@ -88,17 +90,17 @@ def mouseClick(event):
         elif event.y < 650 and event.y > 350:
             Sprite(data['x1'],(225,465))
             Sprite(data['x2'],(225,365))
-            data['s6'] = 1
+            data['s8'] = 1
 #Prints out things when clicks in third column
     elif event.x < 500 and event.x > 350:
         if event.y < 200 and event.y > 50:
             Sprite(data['x1'],(370,175))
             Sprite(data['x2'],(370,75))
-            data['s7'] = 1
+            data['s3'] = 1
         elif event.y < 350 and event.y > 200:
             Sprite(data['x1'],(370,320))
             Sprite(data['x2'],(370,220))
-            data['s8'] = 1
+            data['s6'] = 1
         elif event.y < 650 and event.y > 350:
             Sprite(data['x1'],(370,465))
             Sprite(data['x2'],(370,365))
@@ -136,7 +138,7 @@ def ComputerTurn():
         Sprite(data['o'],(425,425))
         data['s9'] = 2
     elif fullboard() == True:
-        reset()
+        print('Game Over')
     else:
         ComputerTurn()
 
