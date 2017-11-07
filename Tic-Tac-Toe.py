@@ -7,8 +7,8 @@ from random import randint
 
 #Checks to see if a space is empty
 def isEmpty(s):
-    print(data['s'+str(s)])
-    if data['s'+str(s)]:
+    if data['s'+str(s)] > 0:
+        print(False)
         return False
     return True
 
@@ -135,6 +135,8 @@ def ComputerTurn():
     elif place == 9 and isEmpty(9) == True:
         Sprite(data['o'],(425,425))
         data['s9'] = 2
+    elif fullboard() == True:
+        reset()
     else:
         ComputerTurn()
 
