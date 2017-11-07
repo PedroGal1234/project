@@ -7,33 +7,9 @@ from random import randint
 
 #Checks to see if a space is empty
 def isEmpty(s):
-    if s == 1:
-        if data['s1'] > 0:
-            return False
-    elif s == 2:
-        if data['s2'] > 0:
-            return False
-    elif s == 3:
-        if data['s3'] > 0:
-            return False
-    elif s == 4:
-        if data['s4'] > 0:
-            return False
-    elif s == 5:
-        if data['s5'] > 0:
-            return False
-    elif s == 6:
-        if data['s6'] > 0:
-            return False
-    elif s == 7:
-        if data['s7'] > 0:
-            return False
-    elif s == 8:
-        if data['s8'] > 0:
-            return False
-    elif s == 9:
-        if data['s9'] > 0:
-            return False
+    print(data['s'+str(s)])
+    if data['s'+str(s)]:
+        return False
     return True
 
 #Checks to see if someone won
@@ -64,7 +40,7 @@ def winner():
         print('O wins')
     elif data['s1'] == 2 and data['s4'] == 2 and data['s7'] == 2:
         print('O wins')
-    elif data['s2'] == 2 and data['s6'] == 2 and data['s8'] == 2:
+    elif data['s2'] == 2 and data['s5'] == 2 and data['s8'] == 2:
         print('O wins')
     elif data['s3'] == 2 and data['s6'] == 2 and data['s9'] == 2:
         print('O wins')
