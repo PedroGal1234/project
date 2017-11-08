@@ -8,51 +8,67 @@ from random import randint
 #Checks to see if a space is empty
 def isEmpty(s):
     if data['s'+str(s)] > 0:
-        print('False',str(s))
         return False
     else:
-        print('True',str(s))
         return True
 
 #Checks to see if someone won
 def winner():
     #Checks to see if X won
     if data['s1'] == 1 and data['s2'] == 1 and data['s3'] == 1:
-        print('X wins')
+        data['say'] = 'X wins'
+        data['gameOver'] = True
     elif data['s4'] == 1 and data['s5'] == 1 and data['s6'] == 1:
-        print('X wins')
+        data['say'] = 'X wins'
+        data['gameOver'] = True
     elif data['s7'] == 1 and data['s8'] == 1 and data['s9'] == 1:
-        print('X wins')
+        data['say'] = 'X wins'
+        data['gameOver'] = True
     elif data['s1'] == 1 and data['s4'] == 1 and data['s7'] == 1:
-        print('X wins')
+        data['say'] = 'X wins'
+        data['gameOver'] = True
     elif data['s2'] == 1 and data['s5'] == 1 and data['s8'] == 1:
-        print('X wins')
+        data['say'] = 'X wins'
+        data['gameOver'] = True
     elif data['s3'] == 1 and data['s6'] == 1 and data['s9'] == 1:
-        print('X wins')
+        data['say'] = 'X wins'
+        data['gameOver'] = True
     elif data['s1'] == 1 and data['s5'] == 1 and data['s9'] == 1:
-        print('X wins')
+        data['say'] = 'X wins'
+        data['gameOver'] = True
     elif data['s7'] == 1 and data['s5'] == 1 and data['s3'] == 1:
-        print('X wins')
+        data['say'] = 'X wins'
+        data['gameOver'] = True
     #Checks to see if O won
     elif data['s1'] == 2 and data['s2'] == 2 and data['s3'] == 2:
-        print('O wins')
+        data['say'] = 'O wins'
+        data['gameOver'] = True
     elif data['s4'] == 2 and data['s5'] == 2 and data['s6'] == 2:
-        print('O wins')
+        data['say'] = 'O wins'
+        data['gameOver'] = True
     elif data['s7'] == 2 and data['s8'] == 2 and data['s9'] == 2:
-        print('O wins')
+        data['say'] = 'O wins'
+        data['gameOver'] = True
     elif data['s1'] == 2 and data['s4'] == 2 and data['s7'] == 2:
-        print('O wins')
+        data['say'] = 'O wins'
+        data['gameOver'] = True
     elif data['s2'] == 2 and data['s5'] == 2 and data['s8'] == 2:
-        print('O wins')
+        data['say'] = 'O wins'
+        data['gameOver'] = True
     elif data['s3'] == 2 and data['s6'] == 2 and data['s9'] == 2:
-        print('O wins')
+        data['say'] = 'O wins'
+        data['gameOver'] = True
     elif data['s1'] == 2 and data['s5'] == 2 and data['s9'] == 2:
-        print('O wins')
+        data['say'] = 'O wins'
+        data['gameOver'] = True
     elif data['s7'] == 2 and data['s5'] == 2 and data['s3'] == 2:
-        print('O wins')
+        data['say'] = 'O wins'
+        data['gameOver'] = True
+
 #Checks to see if a tie
     elif fullboard() == True:
-        print('Tie Game')
+        data['say'] = 'Tie Game'
+        data['gameOver'] = True
 
 #Checks to see if board is full for a tie
 def fullboard():
@@ -63,50 +79,67 @@ def fullboard():
 
 #Does Something when someone clicks On an open Sace
 def mouseClick(event):
-#Prints out things when clicks in first column
-    if event.x < 200 and event.x > 50:
-        if event.y < 200 and event.y > 50:
-            Sprite(data['x1'],(80,175))
-            Sprite(data['x2'],(80,75))
-            data['s1'] = 1
-        elif event.y < 350 and event.y > 200:
-            Sprite(data['x1'],(80,320))
-            Sprite(data['x2'],(80,220))
-            data['s4'] = 1
-        elif event.y < 650 and event.y > 350:
-            Sprite(data['x1'],(80,465))
-            Sprite(data['x2'],(80,365))
-            data['s7'] = 1
-#Prints out things when clicks in second column  
-    elif event.x < 350 and event.x > 50:
-        if event.y < 200 and event.y > 50:
-            Sprite(data['x1'],(225,175))
-            Sprite(data['x2'],(225,75))
-            data['s2'] = 1
-        elif event.y < 350 and event.y > 200:
-            Sprite(data['x1'],(225,320))
-            Sprite(data['x2'],(225,220))
-            data['s5'] = 1
-        elif event.y < 650 and event.y > 350:
-            Sprite(data['x1'],(225,465))
-            Sprite(data['x2'],(225,365))
-            data['s8'] = 1
-#Prints out things when clicks in third column
-    elif event.x < 500 and event.x > 350:
-        if event.y < 200 and event.y > 50:
-            Sprite(data['x1'],(370,175))
-            Sprite(data['x2'],(370,75))
-            data['s3'] = 1
-        elif event.y < 350 and event.y > 200:
-            Sprite(data['x1'],(370,320))
-            Sprite(data['x2'],(370,220))
-            data['s6'] = 1
-        elif event.y < 650 and event.y > 350:
-            Sprite(data['x1'],(370,465))
-            Sprite(data['x2'],(370,365))
-            data['s9'] = 1
-    ComputerTurn()
-    winner()
+    #Only runs if the game isn't over
+    if data['gameOver'] == False:
+        #Prints out things when clicks in first column
+        if event.x < 200 and event.x > 50:
+            if event.y < 200 and event.y > 50:
+                Sprite(data['x1'],(80,175))
+                Sprite(data['x2'],(80,75))
+                data['s1'] = 1
+                ComputerTurn()
+            elif event.y < 350 and event.y > 200:
+                Sprite(data['x1'],(80,320))
+                Sprite(data['x2'],(80,220))
+                data['s4'] = 1
+                ComputerTurn()
+            elif event.y < 650 and event.y > 350:
+                Sprite(data['x1'],(80,465))
+                Sprite(data['x2'],(80,365))
+                data['s7'] = 1
+                ComputerTurn()
+    #Prints out things when clicks in second column  
+        elif event.x < 350 and event.x > 50:
+            if event.y < 200 and event.y > 50:
+                Sprite(data['x1'],(225,175))
+                Sprite(data['x2'],(225,75))
+                data['s2'] = 1
+                ComputerTurn()
+            elif event.y < 350 and event.y > 200:
+                Sprite(data['x1'],(225,320))
+                Sprite(data['x2'],(225,220))
+                data['s5'] = 1
+                ComputerTurn()
+            elif event.y < 650 and event.y > 350:
+                Sprite(data['x1'],(225,465))
+                Sprite(data['x2'],(225,365))
+                data['s8'] = 1
+                ComputerTurn()
+    #Prints out things when clicks in third column
+        elif event.x < 500 and event.x > 350:
+            if event.y < 200 and event.y > 50:
+                Sprite(data['x1'],(370,175))
+                Sprite(data['x2'],(370,75))
+                data['s3'] = 1
+                ComputerTurn()
+            elif event.y < 350 and event.y > 200:
+                Sprite(data['x1'],(370,320))
+                Sprite(data['x2'],(370,220))
+                data['s6'] = 1
+                ComputerTurn()
+            elif event.y < 650 and event.y > 350:
+                Sprite(data['x1'],(370,465))
+                Sprite(data['x2'],(370,365))
+                data['s9'] = 1
+                ComputerTurn()
+        winner()
+    #It will print a white screen with the winner if the game is over
+    else:
+        text = TextAsset(data['say'], fill=black, style='bold 100pt Times')
+        whiteRectangle = RectangleAsset(1000,1000,whiteOutline,white)
+        Sprite(whiteRectangle)
+        Sprite(text,(300,100))
+        
 #Does the computer turn
 def ComputerTurn():
     place = randint(1,9)
@@ -146,9 +179,11 @@ if __name__ == '__main__':
     black = Color(0x00000,1)
     white = Color(0xffffff,1)
     blackOutline = LineStyle(10,black)
+    whiteOutline = LineStyle(10,white)
     boardV1 = LineAsset(0,450,blackOutline)
     boardH1 = LineAsset(450,0,blackOutline)
     
+    #sets up the dictionary with all of the variables
     data = {}
     data['x1'] = LineAsset(100,-100,LineStyle(8,black))
     data['x2'] = LineAsset(100,100,LineStyle(8,black))
@@ -162,6 +197,8 @@ if __name__ == '__main__':
     data['s7'] = 0
     data['s8'] = 0
     data['s9'] = 0
+    data['gameOver'] = False
+    data['say'] = ''
     
     #Desplays the board
     Sprite(boardV1,(200,50))
