@@ -25,6 +25,7 @@ choice = int(input('Enter A number: '))
 
 
 if choice == 1:
+    print('You have to put a zero before the decimal if there is one')
     H = float(input('What is the molarity of H plus ions: '))
     OH_pH = (14 - Hplus_pH(H))
     OH = OH(OH_pH)
@@ -32,6 +33,7 @@ if choice == 1:
     print('The concentration of OH minus is:',OH)
 
 if choice == 2:
+    print('You have to put a zero before the decimal if there is one')
     OH = float(input('What is the molarity of OH minus ions: '))
     OH_pH = OHminus_pH(OH)
     pH = (14 - OH_pH)
@@ -39,7 +41,7 @@ if choice == 2:
     print('The concentration of H plus is:',H(pH))
 
 if choice == 3:
-    pH = int(input('What is the pH: '))
+    pH = float(input('What is the pH: '))
     OH = OH(14-pH)
     print('The concentration of H plus is:',H(pH))
     print('The concentration of OH minus is:',OH)
