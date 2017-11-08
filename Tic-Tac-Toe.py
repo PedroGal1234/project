@@ -171,7 +171,7 @@ def ComputerTurn():
         Sprite(data['o'],(425,425))
         data['s9'] = 2
     elif fullboard() == True:
-        print('Game Over')
+        print('')
     else:
         ComputerTurn()
 
