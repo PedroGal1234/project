@@ -66,9 +66,9 @@ def winner():
         data['gameOver'] = True
         Sprite(redRectangle,(350,50))
         Sprite(redRectangle,(200,200))
-        Sprite(redRectangle,(350,350))
+        Sprite(redRectangle,(50,350))
     #Checks to see if O won
-    if data['s1'] == 2 and data['s2'] == 2 and data['s3'] == 2:
+    elif data['s1'] == 2 and data['s2'] == 2 and data['s3'] == 2:
         data['say'] = 'O wins'
         data['gameOver'] = True
         Sprite(redRectangle,(50,50))
