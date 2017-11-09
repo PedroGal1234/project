@@ -204,6 +204,7 @@ def ComputerTurn():
     elif data['s1'] == 1 and data['s3'] == 1 and isEmpty(2) == True:
         Sprite(data['o'],(275,110))
         data['s2'] = 2
+    
     elif data['s4'] == 1 and data['s5'] == 1 and isEmpty(6) == True:
         Sprite(data['o'],(425,275))
         data['s6'] = 2
@@ -213,7 +214,66 @@ def ComputerTurn():
     elif data['s5'] == 1 and data['s6'] == 1 and isEmpty(4) == True:
         Sprite(data['o'],(115,275))
         data['s4'] = 2
-
+    
+    elif data['s7'] == 1 and data['s8'] == 1 and isEmpty(9) == True:
+        Sprite(data['o'],(425,425))
+        data['s9'] = 2
+    elif data['s8'] == 1 and data['s9'] == 1 and isEmpty(7) == True:
+        Sprite(data['o'],(115,425))
+        data['s7'] = 2
+    elif data['s7'] == 1 and data['s9'] == 1 and isEmpty(8) == True:
+        Sprite(data['o'],(275,425))
+        data['s8'] = 2
+    
+    elif data['s1'] == 1 and data['s4'] == 1 and isEmpty(7) == True:
+        Sprite(data['o'],(115,425))
+        data['s7'] = 2
+    elif data['s4'] == 1 and data['s7'] == 1 and isEmpty(1) == True:
+        Sprite(data['o'],(115,110))
+        data['s1'] = 2
+    elif data['s1'] == 1 and data['s7'] == 1 and isEmpty(4) == True:
+        Sprite(data['o'],(115,275))
+        data['s4'] = 2
+    
+    elif data['s2'] == 1 and data['s5'] == 1 and isEmpty(8) == True:
+        Sprite(data['o'],(275,425))
+        data['s8'] = 2
+    elif data['s2'] == 1 and data['s8'] == 1 and isEmpty(5) == True:
+        Sprite(data['o'],(275,275))
+        data['s5'] = 2
+    elif data['s8'] == 1 and data['s5'] == 1 and isEmpty(2) == True:
+        Sprite(data['o'],(115,275))
+        data['s4'] = 2
+    
+    elif data['s3'] == 1 and data['s6'] == 1 and isEmpty(9) == True:
+        Sprite(data['o'],(425,425))
+        data['s9'] = 2
+    elif data['s3'] == 1 and data['s9'] == 1 and isEmpty(6) == True:
+        Sprite(data['o'],(425,275))
+        data['s6'] = 2
+    elif data['s7'] == 1 and data['s9'] == 1 and isEmpty(3) == True:
+        Sprite(data['o'],(425,110))
+        data['s3'] = 2
+    
+    elif data['s1'] == 1 and data['s5'] == 1 and isEmpty(9) == True:
+        Sprite(data['o'],(425,425))
+        data['s9'] = 2
+    elif data['s1'] == 1 and data['s9'] == 1 and isEmpty(5) == True:
+        Sprite(data['o'],(275,275))
+        data['s5'] = 2
+    elif data['s5'] == 1 and data['s9'] == 1 and isEmpty(1) == True:
+        Sprite(data['o'],(115,110))
+        data['s1'] = 2
+        
+    elif data['s3'] == 1 and data['s5'] == 1 and isEmpty(7) == True:
+        Sprite(data['o'],(115,425))
+        data['s7'] = 2
+    elif data['s3'] == 1 and data['s7'] == 1 and isEmpty(5) == True:
+        Sprite(data['o'],(275,275))
+        data['s5'] = 2
+    elif data['s7'] == 1 and data['s5'] == 1 and isEmpty(3) == True:
+        Sprite(data['o'],(425,110))
+        data['s3'] = 2
 
     elif place == 1 and isEmpty(1) == True:
         Sprite(data['o'],(115,110))
