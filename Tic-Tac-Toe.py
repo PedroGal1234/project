@@ -242,8 +242,8 @@ def ComputerTurn():
         Sprite(data['o'],(275,275))
         data['s5'] = 2
     elif data['s8'] == 1 and data['s5'] == 1 and isEmpty(2) == True:
-        Sprite(data['o'],(115,275))
-        data['s4'] = 2
+        Sprite(data['o'],(275,110))
+        data['s2'] = 2
     
     elif data['s3'] == 1 and data['s6'] == 1 and isEmpty(9) == True:
         Sprite(data['o'],(425,425))
