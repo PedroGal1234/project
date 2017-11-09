@@ -195,7 +195,16 @@ def mouseClick(event):
 #Does the computer turn
 def ComputerTurn():
     place = randint(1,9)
-    if place == 1 and isEmpty(1) == True:
+    if data['s1'] == 1 and data['s2'] == 1 and isEmpty(3) == True:
+        Sprite(data['o'],(425,110))
+        data['s3'] = 2
+    elif data['s2'] == 1 and data['s3'] == 1 and isEmpty(1) == True:
+        Sprite(data['o'],(115,110))
+        data['s1'] = 2
+    elif data['s1'] == 1 and data['s3'] == 1 and isEmpty(2) == True:
+        Sprite(data['o'],(275,110))
+        data['s2'] = 2
+    elif place == 1 and isEmpty(1) == True:
         Sprite(data['o'],(115,110))
         data['s1'] = 2
     elif place == 2 and isEmpty(2) == True:
