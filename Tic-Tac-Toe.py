@@ -204,6 +204,17 @@ def ComputerTurn():
     elif data['s1'] == 1 and data['s3'] == 1 and isEmpty(2) == True:
         Sprite(data['o'],(275,110))
         data['s2'] = 2
+    elif data['s4'] == 1 and data['s5'] == 1 and isEmpty(6) == True:
+        Sprite(data['o'],(425,275))
+        data['s6'] = 2
+    elif data['s4'] == 1 and data['s6'] == 1 and isEmpty(5) == True:
+        Sprite(data['o'],(275,275))
+        data['s5'] = 2
+    elif data['s5'] == 1 and data['s6'] == 1 and isEmpty(4) == True:
+        Sprite(data['o'],(115,275))
+        data['s4'] = 2
+
+
     elif place == 1 and isEmpty(1) == True:
         Sprite(data['o'],(115,110))
         data['s1'] = 2
